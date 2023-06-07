@@ -2,10 +2,13 @@ require('dotenv').config();
 const axios = require('axios');
 
 const url = 'https://api.yelp.com/v3';
+let location;
 
 module.exports = {
-  getRestaurant(term, location) {
+  getRestaurant(term, locationParam) {
     // const { content } = response;
+    location = locationParam || location;
+    console.log(location);
     const endpoint = '/businesses/search';
     return axios.get(url + endpoint, {
       params: {
