@@ -2,6 +2,7 @@ require('dotenv').config();
 const axios = require('axios');
 
 const model = 'gpt-3.5-turbo';
+const messages = [];
 
 module.exports = {
   // getChatResponse(req, res) {
@@ -23,12 +24,26 @@ module.exports = {
   //       res.status(400).send();
   //     });
   // },
-  getChatResponse(message) {
-    const data = {
-      model,
-      messages: [{ role: 'user', content: message }],
-    };
-    return axios.post('https://api.openai.com/v1/chat/completions', data, {
+  getChatResponse(location, message) {
+    if (location) {
+      const locationMessage = {
+        role: 'user',
+        content: `give me a list of three restaurants names in ${location}`,
+      };
+      const userMessage = {
+        role: 'user',
+        content: message,
+      };
+      messages.push(locationMessage, userMessage);
+    } else {
+      const newMessage = {
+        role: 'user',
+        content: message,
+      };
+      messages.push(newMessage);
+    }
+    console.log({ model, messages });
+    return axios.post('https://api.openai.com/v1/chat/completions', { model, messages }, {
       headers: {
         Authorization: `Bearer ${process.env.OPENAI_KEY}`,
       },

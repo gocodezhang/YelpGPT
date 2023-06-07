@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+const path = require('path');
 const controller = require('./controller/index');
 
 const app = express();
@@ -10,6 +11,7 @@ app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // Routes
 app.get('/chats', controller.responseAndRestaurant);

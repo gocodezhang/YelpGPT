@@ -30,5 +30,6 @@ module.exports = {
     'func-names': 'off',
     'import/extensions': 'off',
     'camelcase': 'off',
+    'react/prop-types': 'off',
   },
 };

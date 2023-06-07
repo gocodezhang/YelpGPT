@@ -1,0 +1,191 @@
+/**
+ *
+ * Based on Josh Comeau's CSS Reset: https://www.joshwcomeau.com/css/custom-css-reset/.
+ *
+ * Feel free to edit this file as needed.
+ *
+ */
+
+ *,
+ *::before,
+ *::after {
+   box-sizing: border-box;
+ }
+
+ * {
+   margin: 0;
+ }
+
+ html,
+ body {
+  height: 100%;
+  background-color:white;
+  color:black;
+ }
+
+ body {
+   font-family: 'Helvetica Neue', sans-serif;
+   line-height: 1.5;
+   -webkit-font-smoothing: antialiased;
+ }
+
+ img,
+ picture,
+ video,
+ canvas,
+ svg {
+   display: block;
+   max-width: 100%;
+ }
+
+ input,
+ button,
+ textarea,
+ select {
+   font: inherit;
+ }
+
+ p,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+   overflow-wrap: break-word;
+ }
+
+ main {
+   margin: auto;
+ }
+
+/* --------------------------------------------------------------------------------------------------------
+---------------------------------- Banner ------------------------------------------------
+---------------------------------------------------------------------------------------------------------*/
+
+#banner {
+  background-color: #1c455a;
+  height: 35px;
+  position: relative;
+}
+
+#banner > p {
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  font-weight: 800;
+  left: 3%;
+}
+
+/* --------------------------------------------------------------------------------------------------------
+----------------------------------chatbox------------------------------------------------
+---------------------------------------------------------------------------------------------------------*/
+#chatbox {
+  margin-top: 10%;
+}
+
+#chatbox > h2 {
+  text-align: center;
+  margin: 8px;
+}
+
+#chatbox-input {
+  position: relative;
+  margin: 16px;
+}
+
+#chatbox-input > input {
+  width: 50%;
+  margin: auto;
+  display: block;
+}
+
+.rotate {
+  animation: roll 0.7s linear 1;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#chatbox-input > button {
+  position: absolute;
+  top: 0px;
+  right: 25%;
+}
+
+/* --------------------------------------------------------------------------------------------------------
+----------------------------------Restaurant List------------------------------------------------
+---------------------------------------------------------------------------------------------------------*/
+.restaurants {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 50%;
+  margin: auto;
+  overflow-y: auto;
+}
+
+.restaurant {
+  height: 20%;
+  margin: 8px;
+  position: relative;
+  border-top: 1px solid #ccccccfc;
+}
+
+.restaurant > img {
+  object-fit: cover;
+  height: 90%;
+  width: 25%;
+  display: inline-block;
+  margin: 6px;
+  border-radius: 5px;
+}
+
+.restaurant-info {
+display: inline-block;
+list-style-type: none;
+position: absolute;
+top: 0px;
+left: 25%;
+}
+
+.restaurant-info .tags {
+margin-right: 4px;
+}
+
+#loader {
+  font-size: 70px;
+  margin-top: 40px;
+}
+
+
+/* --------------------------------------------------------------------------------------------------------
+----------------------------------         Star   ------------------------------------------------
+---------------------------------------------------------------------------------------------------------*/
+#star {
+  position: relative;
+  display: inline-block;
+}
+#star .empty-star {
+  color: #ccc;
+  display: inline-block;
+}
+
+#star .filled-star {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#star span {
+  font-size: 16px;
+}

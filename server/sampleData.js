@@ -1,6 +1,6 @@
 /* eslint operator-linebreak: 0 */
 
-const exampleResponse = {
+const exampleGPTResponse = {
   role: 'assistant',
   content: '1. The Table\n' +
     "2. Original Joe's\n" +
