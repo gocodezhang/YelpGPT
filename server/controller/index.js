@@ -1,5 +1,6 @@
 const gptAPI = require('./controller-openAI');
 const yelpAPI = require('./controller-yelp');
+const model = require('../mongoDB/db.js');
 
 function resultGPTParse(text) {
   const textNeed = text.substring(text.indexOf('1'));
@@ -33,6 +34,32 @@ module.exports = {
       })
       .then((restaurantInfoArr) => {
         res.status(200).send(restaurantInfoArr);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(400).send();
+      });
+  },
+
+  addFavorRestaurant(req, res) {
+    const { body } = req;
+    model.add(body)
+      .then(() => {
+        console.log('successfully added');
+        res.status(200).send();
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(400).send();
+      });
+  },
+
+  getFavorRestaurants(req, res) {
+    const { uid } = req.query;
+    model.getRestaurants(uid)
+      .then((result) => {
+        console.log(result);
+        res.status(200).send(result);
       })
       .catch((err) => {
         console.log(err);
