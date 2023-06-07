@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/restaurant');
 
 const favorSchema = mongoose.Schema({
-  uid: { type: String, unique: true },
+  uid: String,
   restaurant: Object,
 });
 

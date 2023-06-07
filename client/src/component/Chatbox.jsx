@@ -3,6 +3,8 @@ import axios from 'axios';
 import $ from 'jquery';
 import { RestaurantContext } from './App.jsx';
 
+/* eslint "jsx-a11y/control-has-associated-label":0 */
+/* eslint "react/self-closing-comp":0 */
 function Chatbox() {
   const { setRestaurants } = useContext(RestaurantContext);
   const [displayLocation, setDisplayLocation] = useState(true);

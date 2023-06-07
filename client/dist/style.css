@@ -59,6 +59,10 @@
    margin: auto;
  }
 
+ button {
+  cursor: pointer;
+ }
+
 /* --------------------------------------------------------------------------------------------------------
 ---------------------------------- Banner ------------------------------------------------
 ---------------------------------------------------------------------------------------------------------*/
@@ -161,6 +165,12 @@
   border-radius: 5px;
 }
 
+.restaurant .add-fav {
+  position: absolute;
+  top: 0%;
+  right: 5%;
+}
+
 .restaurant-info {
 display: inline-block;
 list-style-type: none;
@@ -218,4 +228,33 @@ margin-right: 4px;
   justify-content: center;
   align-items: center;
   z-index: 10;
+}
+
+/* --------------------------------------------------------------------------------------------------------
+----------------------------------         Bookmark   ------------------------------------------------
+---------------------------------------------------------------------------------------------------------*/
+
+.mark-restaurants {
+  position: fixed;
+  top: 18%;
+  right: 5%;
+}
+
+.mark-restaurants > p {
+  font-weight: 800;
+}
+
+.mark-restaurant-contain {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 4px;
+  font-size: small;
+  width: 175px;
+  height: 200px;
+  overflow-y: auto;
+  list-style-type: none;
+}
+
+.mark-restaurant-contain > li {
+  margin: 5px;
 }
