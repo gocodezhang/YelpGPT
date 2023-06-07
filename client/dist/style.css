@@ -77,11 +77,23 @@
   left: 3%;
 }
 
+#banner > button {
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  font-weight: 800;
+  left: 90%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
 /* --------------------------------------------------------------------------------------------------------
 ----------------------------------chatbox------------------------------------------------
 ---------------------------------------------------------------------------------------------------------*/
 #chatbox {
-  margin-top: 10%;
+  margin-top: 3%;
 }
 
 #chatbox > h2 {
@@ -164,6 +176,8 @@ margin-right: 4px;
 #loader {
   font-size: 70px;
   margin-top: 40px;
+  position: absolute;
+  left: 47%;
 }
 
 
@@ -188,4 +202,20 @@ margin-right: 4px;
 
 #star span {
   font-size: 16px;
+}
+
+/* --------------------------------------------------------------------------------------------------------
+----------------------------------         modal   ------------------------------------------------
+---------------------------------------------------------------------------------------------------------*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
 }

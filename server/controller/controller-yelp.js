@@ -8,7 +8,6 @@ module.exports = {
   getRestaurant(term, locationParam) {
     // const { content } = response;
     location = locationParam || location;
-    console.log(location);
     const endpoint = '/businesses/search';
     return axios.get(url + endpoint, {
       params: {

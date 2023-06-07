@@ -15,6 +15,8 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // Routes
 app.get('/chats', controller.responseAndRestaurant);
+app.get('/favrestaurants', controller.getFavorRestaurants);
+app.post('/favrestaurants', controller.addFavorRestaurant);
 
 // Server listen
 app.listen(3000);
