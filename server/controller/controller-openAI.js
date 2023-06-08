@@ -3,45 +3,40 @@ const axios = require('axios');
 
 const model = 'gpt-3.5-turbo';
 const messages = [];
+const defaultNumber = 'three';
 
 module.exports = {
-  // getChatResponse(req, res) {
-  //   const configuration = new Configuration({
-  //     apiKey: process.env.OPENAI_KEY,
-  //   });
-  //   const openai = new OpenAIApi(configuration);
-
-  //   openai.createChatCompletion({
-  //     model: "gpt-3.5-turbo",
-  //     messages: [{role: "user", content: "Hello world"}],
-  //   })
-  //     .then((result) => {
-  //       console.log(result);
-  //       res.status(200).send();
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       res.status(400).send();
-  //     });
-  // },
-  getChatResponse(location, message) {
-    if (location) {
+  getChatResponse(location, message, type) {
+    if (type === 'initial') {
       const locationMessage = {
         role: 'user',
-        content: `give me a list of three restaurants names in ${location}`,
+        content: `give me a list of ${defaultNumber} restaurants names in ${location}`,
       };
       const userMessage = {
         role: 'user',
         content: message,
       };
       messages.push(locationMessage, userMessage);
-    } else {
+    } else if (type === 'ongoing') {
       const newMessage = {
         role: 'user',
         content: message,
       };
       messages.push(newMessage);
+    } else if (type === 'changeLocation') {
+      const locationChangeMessage = {
+        role: 'user',
+        content: `give me a list of ${defaultNumber} restaurants names in ${location} instead`,
+      };
+      messages.push(locationChangeMessage);
+    } else {
+      const moreResultMessage = {
+        role: 'user',
+        content: `can you recommend ${defaultNumber} more similar restaurants?`,
+      };
+      messages.push(moreResultMessage);
     }
+
     console.log({ model, messages });
     return axios.post('https://api.openai.com/v1/chat/completions', { model, messages }, {
       headers: {

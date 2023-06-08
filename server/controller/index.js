@@ -23,14 +23,14 @@ function resultGPTParse(text) {
 
 module.exports = {
   responseAndRestaurant(req, res) {
-    const { location, textParams } = req.query;
-    gptAPI.getChatResponse(location, textParams)
+    const { location, textParams, type } = req.query;
+    gptAPI.getChatResponse(location, textParams, type)
       .then((resultGPT) => {
         const { content } = resultGPT;
         const restaurantArr = resultGPTParse(content);
         console.log(restaurantArr);
         return Promise.all(restaurantArr.map((restaurant) => (
-          yelpAPI.getRestaurant(restaurant, location))));
+          yelpAPI.getRestaurant(restaurant, location, type))));
       })
       .then((restaurantInfoArr) => {
         res.status(200).send(restaurantInfoArr);
@@ -58,7 +58,6 @@ module.exports = {
     const { uid } = req.query;
     model.getRestaurants(uid)
       .then((result) => {
-        console.log(result);
         res.status(200).send(result);
       })
       .catch((err) => {

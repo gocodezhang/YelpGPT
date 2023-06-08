@@ -32,9 +32,14 @@ function Auth() {
     // Other config options...
   });
 
+  function clickHandler() {
+    $('.modal').css('display', 'none');
+  }
+
   return (
     <div className="modal" style={{ display: 'none' }}>
       <div id="firebaseui-auth-container"></div>
+      <button type="button" onClick={clickHandler}>X</button>
     </div>
   );
 }

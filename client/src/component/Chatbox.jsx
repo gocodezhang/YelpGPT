@@ -6,16 +6,28 @@ import { RestaurantContext } from './App.jsx';
 /* eslint "jsx-a11y/control-has-associated-label":0 */
 /* eslint "react/self-closing-comp":0 */
 function Chatbox() {
-  const { setRestaurants } = useContext(RestaurantContext);
+  const { setRestaurants, inputObj, setInputObj } = useContext(RestaurantContext);
   const [displayLocation, setDisplayLocation] = useState(true);
-  const [inputObj, setInputObj] = useState({
-    location: '',
-    textParams: '',
-  });
 
   function inputHanlder(e) {
     setInputObj({ ...inputObj, [e.target.name]: e.target.value });
   }
+
+  // function queryDifferentiator() {
+  //   let params;
+  //   if (inputObj.sendLocation) {
+  //     params = {
+  //       location: inputObj.location,
+  //       textParams: inputObj.textParams,
+  //     };
+  //   } else {
+  //     params = {
+  //       location: '',
+  //       textParams: inputObj.textParams,
+  //     };
+  //   }
+  //   return axios.get('/chats', { params });
+  // }
 
   function submitHandler(e) {
     e.preventDefault();
@@ -25,19 +37,22 @@ function Chatbox() {
       $('#chatbox-input').addClass('rotate');
     } else {
       $('#loader').toggle();
-      axios.get('/chats', {
-        params: inputObj,
-      })
+      axios.get('/chats', { params: inputObj })
         .then((result) => {
           console.log(result);
           $('#loader').toggle();
           setRestaurants(result.data);
-          setInputObj({
-            location: '',
-            textParams: '',
-          });
+          if (inputObj.type === 'initial') {
+            $('.modify').toggle();
+          }
+          setInputObj({ ...inputObj, textParams: '', type: 'ongoing' });
         })
-        .catch((err) => (console.log(err)));
+        .catch((err) => {
+          console.log(err);
+          $('#loader').toggle();
+          setRestaurants([]);
+          $('.error-message').toggle();
+        });
     }
   }
 

@@ -61,6 +61,8 @@
 
  button {
   cursor: pointer;
+  border: none;
+  background: transparent;
  }
 
 /* --------------------------------------------------------------------------------------------------------
@@ -132,15 +134,19 @@
 
 #chatbox-input > button {
   position: absolute;
-  top: 0px;
+  top: 2px;
   right: 25%;
+}
+
+#chatbox-input > button:hover {
+  color: #8F00FF;
 }
 
 /* --------------------------------------------------------------------------------------------------------
 ----------------------------------Restaurant List------------------------------------------------
 ---------------------------------------------------------------------------------------------------------*/
 .restaurants {
-  height: 800px;
+  height: 566px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -171,6 +177,10 @@
   right: 5%;
 }
 
+.restaurant .add-fav:hover {
+  color: #8F00FF;
+}
+
 .restaurant-info {
 display: inline-block;
 list-style-type: none;
@@ -180,7 +190,12 @@ left: 25%;
 }
 
 .restaurant-info .tags {
-margin-right: 4px;
+  background: #FDBCB4;
+  border-radius: 2px;
+  padding: 4px;
+  font-weight: 500;
+  font-size: small;
+  margin-right: 4px;
 }
 
 #loader {
@@ -188,6 +203,10 @@ margin-right: 4px;
   margin-top: 40px;
   position: absolute;
   left: 47%;
+}
+
+.error-message {
+  color: red;
 }
 
 
@@ -253,8 +272,67 @@ margin-right: 4px;
   height: 200px;
   overflow-y: auto;
   list-style-type: none;
+  padding: 0 10px;
 }
 
 .mark-restaurant-contain > li {
   margin: 5px;
+}
+
+/* --------------------------------------------------------------------------------------------------------
+----------------------------------         Auth   ------------------------------------------------
+---------------------------------------------------------------------------------------------------------*/
+
+#firebaseui-auth-container {
+  background: white;
+  height: 50%;
+  width: 50%;
+  align-items: center;
+  display: flex;
+}
+
+.mdl-shadow--2dp {
+  box-shadow: none;
+}
+
+.modal > button {
+  position: absolute;
+  top: 25%;
+  right: 25%;
+}
+
+/* --------------------------------------------------------------------------------------------------------
+----------------------------------         Modify   ------------------------------------------------
+---------------------------------------------------------------------------------------------------------*/
+.modify {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+#update-location {
+  background: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid #1c455a;
+  border-radius: 5px;
+  cursor: text;
+}
+
+.modify > input {
+  background: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid #1c455a;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modify > input:hover {
+  background: #1c455a;
+  color: white;
+}
+
+.modify .button-like {
+  display: inline-block;
 }

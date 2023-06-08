@@ -5,9 +5,11 @@ const url = 'https://api.yelp.com/v3';
 let location;
 
 module.exports = {
-  getRestaurant(term, locationParam) {
+  getRestaurant(term, locationParam, type) {
     // const { content } = response;
-    location = locationParam || location;
+    if (type !== 'ongoing' || type !== 'regenerate') {
+      location = locationParam;
+    }
     const endpoint = '/businesses/search';
     return axios.get(url + endpoint, {
       params: {
