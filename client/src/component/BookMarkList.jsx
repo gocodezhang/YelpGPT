@@ -7,11 +7,11 @@ function BookMarkList() {
   return markRestaurants.length === 0 ? null : (
     <div className="mark-restaurants">
       <p>Your BookMark</p>
-      <div className="mark-restaurant-contain">
+      <ul className="mark-restaurant-contain">
         {markRestaurants.map((restaurant) => (
           <BookMarkEntry markRestaurant={restaurant} key={restaurant.id} />
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

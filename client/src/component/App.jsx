@@ -5,6 +5,7 @@ import RestaurantList from './RestaurantList.jsx';
 import Banner from './Banner.jsx';
 import Auth from './Auth.jsx';
 import BookMarkList from './BookMarkList.jsx';
+import ModifyResult from './ModifyResult.jsx';
 
 export const RestaurantContext = createContext('restaurants');
 
@@ -14,6 +15,11 @@ function App() {
   const [markRestaurants, setMarkRestaurants] = useState([]);
   const [currentUser, setCurrentUser] = useState('');
   const [refresh, setRefresh] = useState(false);
+  const [inputObj, setInputObj] = useState({
+    location: '',
+    textParams: '',
+    type: 'initial',
+  });
 
   useEffect(() => {
     if (currentUser) {
@@ -41,6 +47,8 @@ function App() {
       setCurrentUser,
       refresh,
       setRefresh,
+      inputObj,
+      setInputObj,
     }}
     >
       <Banner />
@@ -48,6 +56,7 @@ function App() {
       <RestaurantList />
       <Auth />
       <BookMarkList />
+      <ModifyResult />
     </RestaurantContext.Provider>
   );
 }
