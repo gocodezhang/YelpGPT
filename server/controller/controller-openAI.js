@@ -3,7 +3,7 @@ const axios = require('axios');
 
 const model = 'gpt-3.5-turbo';
 const messages = [];
-const defaultNumber = 'three';
+const defaultNumber = 'five';
 
 module.exports = {
   getChatResponse(location, message, type) {

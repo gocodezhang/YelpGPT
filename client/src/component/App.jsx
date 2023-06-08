@@ -20,6 +20,7 @@ function App() {
     textParams: '',
     type: 'initial',
   });
+  const [buttonSwitch, setButtonSwitch] = useState(true);
 
   useEffect(() => {
     if (currentUser) {
@@ -49,6 +50,8 @@ function App() {
       setRefresh,
       inputObj,
       setInputObj,
+      buttonSwitch,
+      setButtonSwitch,
     }}
     >
       <Banner />
