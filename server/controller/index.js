@@ -18,7 +18,7 @@ function resultGPTParse(text) {
       str = str.substring(0, str.indexOf('-'));
     }
     return str;
-  });
+  }).slice(0, 5);
 }
 
 module.exports = {

@@ -58,7 +58,7 @@ function ModifyResult() {
   return (
     <div className="modify" style={{ display: 'none' }}>
       <div className="button-like">
-        <label htmlFor="location">Current Location:</label>
+        <i className="fa-solid fa-location-dot"></i>
         <input id="update-location" type="text" name="location" value={inputObj.location} onChange={inputHandler} onKeyDown={saveHandler}
           onFocus={(e) => (e.target.style.background = 'pink')}
           onBlur={(e) => (e.target.style.background = "")}

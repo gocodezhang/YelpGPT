@@ -10,7 +10,7 @@ import { RestaurantContext } from './App.jsx';
 
 function Auth() {
   const ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(auth);
-  const { setCurrentUser } = useContext(RestaurantContext);
+  const { setCurrentUser, buttonSwitch, setButtonSwitch } = useContext(RestaurantContext);
 
   ui.start('#firebaseui-auth-container', {
     signInOptions: [
@@ -25,6 +25,7 @@ function Auth() {
     callbacks: {
       signInSuccessWithAuthResult(authResult) {
         console.log(authResult);
+        setButtonSwitch(!buttonSwitch)
         $('.modal').css('display', 'none');
         setCurrentUser(authResult.user.uid);
       },
@@ -39,7 +40,6 @@ function Auth() {
   return (
     <div className="modal" style={{ display: 'none' }}>
       <div id="firebaseui-auth-container"></div>
-      <button type="button" onClick={clickHandler}>X</button>
     </div>
   );
 }
