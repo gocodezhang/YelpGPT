@@ -199,6 +199,10 @@ left: 25%;
   margin-right: 4px;
 }
 
+.restaurant-info .rating > small {
+  margin-left: 6px;
+}
+
 #loader {
   font-size: 70px;
   margin-top: 40px;

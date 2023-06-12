@@ -33,7 +33,9 @@ module.exports = {
           yelpAPI.getRestaurant(restaurant, location, type))));
       })
       .then((restaurantInfoArr) => {
-        res.status(200).send(restaurantInfoArr);
+        console.log(restaurantInfoArr);
+        const uniqueRestaurantInfoArr = [...new Set(restaurantInfoArr)].filter((resObj) => (resObj.id !== 'IRD_9JUjR-06zztisuTdAA'));
+        res.status(200).send(uniqueRestaurantInfoArr);
       })
       .catch((err) => {
         console.log(err);

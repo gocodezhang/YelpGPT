@@ -26,7 +26,10 @@ function RestaurantEntry({ restaurant }) {
       <img src={restaurant.image_url} alt="food" />
       <ul className="restaurant-info">
         <li><a href={restaurant.url}>{restaurant.name}</a></li>
-        <li><Star rating={restaurant.rating} /></li>
+        <li className="rating">
+          <Star rating={restaurant.rating} />
+          <small>{restaurant.review_count}</small>
+        </li>
         <li><Tags categories={restaurant.categories} /></li>
         <li><small>{restaurant.price}</small></li>
         <li><small>{`${restaurant.location.address1}, ${restaurant.location.city}, ${restaurant.location.state} ${restaurant.location.zip_code}`}</small></li>

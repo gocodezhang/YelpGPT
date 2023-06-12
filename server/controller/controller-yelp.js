@@ -10,7 +10,6 @@ module.exports = {
     if (type !== 'ongoing' || type !== 'regenerate') {
       location = locationParam;
     }
-    console.log('yelp:', location);
     const endpoint = '/businesses/search';
     return axios.get(url + endpoint, {
       params: {

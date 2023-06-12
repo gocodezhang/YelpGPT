@@ -12,7 +12,7 @@ function RestaurantList() {
       <FontAwesomeIcon id="loader" style={{ display: 'none' }} icon={faCircleNotch} spin />
       <p className="error-message" style={{ display: 'none' }}>Too many requests</p>
       {restaurants.length === 0 ? null : (restaurants.map((restaurant) => (
-        <RestaurantEntry restaurant={restaurant} key={restaurant.id} />
+        restaurant ? <RestaurantEntry restaurant={restaurant} key={restaurant.id} /> : null
       )))}
     </div>
   );

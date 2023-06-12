@@ -25,7 +25,7 @@ function Auth() {
     callbacks: {
       signInSuccessWithAuthResult(authResult) {
         console.log(authResult);
-        setButtonSwitch(!buttonSwitch)
+        setButtonSwitch(!buttonSwitch);
         $('.modal').css('display', 'none');
         setCurrentUser(authResult.user.uid);
       },
