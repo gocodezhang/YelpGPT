@@ -26,7 +26,7 @@ module.exports = {
     } else if (type === 'changeLocation') {
       const locationChangeMessage = {
         role: 'user',
-        content: `give me a list of ${defaultNumber} restaurants names in ${location} instead`,
+        content: `give me a list of ${defaultNumber} similar restaurants in ${location} instead`,
       };
       messages.push(locationChangeMessage);
     } else {

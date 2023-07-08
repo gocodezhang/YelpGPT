@@ -46,6 +46,7 @@ function ModifyResult() {
       .then((result) => {
         console.log(result.data);
         $('#loader').toggle();
+        setInputObj({ ...inputObj, textParams: '' });
         setRestaurants(result.data);
       })
       .catch((err) => {
