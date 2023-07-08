@@ -34,7 +34,7 @@ module.exports = {
       })
       .then((restaurantInfoArr) => {
         console.log(restaurantInfoArr);
-        const uniqueRestaurantInfoArr = [...new Set(restaurantInfoArr)].filter((resObj) => (resObj.id !== 'IRD_9JUjR-06zztisuTdAA'));
+        const uniqueRestaurantInfoArr = [...new Set(restaurantInfoArr)].filter((resObj) => (resObj.id !== 'IRD_9JUjR-06zztisuTdAA' && resObj.id !== 'EpRAjj2JyJ0GF2jiMKTxJw'));
         res.status(200).send(uniqueRestaurantInfoArr);
       })
       .catch((err) => {
