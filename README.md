@@ -21,12 +21,8 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-        <li>
-      <a href="#about-the-project">Project details</a>
-      <ul>
-        <li><a href="#backend-and-api-integration">Backend and API integration</a></li>
-        <li><a href="#frontend">Frontend</a></li>
-      </ul>
+    <li>
+      <a href="#backend-and-api-integration">Backend and API integration</a>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -47,8 +43,18 @@
 
 **YelpGPT** is a web application to make real-time restaurant recommendations in a conversational setting powered by AI. Instead of having users to find and apply numbers of filters, users in the application can receive restaurant recommendations by simply chatting with AI.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+1. Users will only need to enter their locations first
+2. Then enter any key words or sentences like you were having a normal conversation
+3. After sent, a list of restaurant recommendations will be generated
+   * Registered users will have the options to save restauants in bookmark
+   * Users can modify their locations or request regeneration to update recommendations
 
+*See below screenshots as references*
+<p>
+  <img src="asset/Location-input.png" width="250">
+  <img src="asset/Initial-keywords.png" width="250">
+  <img src="asset/initial-results-withsignin.png" width="250">
+</p>
 
 
 ### Built With
@@ -63,40 +69,41 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- PROJECT DETAILS -->
-## Project Details
+## Backend and API integration
+To enable conversational restaurant recommendation, the backend has embedded the logic to integrate OpenAI API with Yelp API. Please note below and the screenshots for the logic details:
+1. Post receiving users' input, the backend will send the requests to OpenAI API (ChatGPT)
+2. Once receiving ChatGPT's response, the backend will process the text response into vaild parameters
+3. The backend will send requests for corresponding restaurants based on the parameters to Yelp API
 
-### Backend and API integration
-
-### Frontend
+![Backend]
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+This section contains the instruction of how to set up this project in your local environment.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+Please make sure **npm** is installed or run the below command in your terminal to install **npm**
   ```sh
   npm install npm@latest -g
   ```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Obtain API keys from [OpenAI API](https://openai.com/product) and [Yelp API](https://docs.developer.yelp.com/)
 2. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/gocodezhang/YelpGPT
    ```
 3. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+4. Enter your API in `.env`
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   OPENAI_KEY = 'ENTER YOUR API';
+   YELP_KEY = 'ENTER YOUR API';
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -105,12 +112,8 @@ This is an example of how to list things you need to use the software and how to
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+- [ ] Create a component to store all previous input and display to the user
+- [ ] Embed a map to show locations of recommended restaurant
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -120,9 +123,9 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Gaoyuan Zhang
+* [![github]](github-url)
+* [![gmail]](gmail-url)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -137,3 +140,11 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [jQuery]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [MongoDB]: https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white
 [Firebase]: https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black
+[location-input]: asset/Location-input.png
+[keyword-input]: asset/Initial-keywords.png
+[result]: asset/initial-results-withsignin.png
+[Backend]: asset/Backend.png
+[github]: https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white
+[github-url]: https://github.com/gocodezhang
+[gmail]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
+[gmail-url]: mailto:zgy25483387@gmail.com
