@@ -51,9 +51,9 @@
 
 *See below screenshots as references*
 <p>
-  <img src="asset/Location-input.png" width="250">
-  <img src="asset/Initial-keywords.png" width="250">
-  <img src="asset/initial-results-withsignin.png" width="250">
+  <img src="asset/Location-input.png">
+  <img src="asset/Initial-keywords.png">
+  <img src="asset/initial-results-withsignin.png">
 </p>
 
 
