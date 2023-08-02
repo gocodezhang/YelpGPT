@@ -124,8 +124,8 @@ Please make sure **npm** is installed or run the below command in your terminal 
 ## Contact
 
 Gaoyuan Zhang
-* [![github]](github-url)
-* [![gmail]](gmail-url)
+* [![github]](https://github.com/gocodezhang)
+* [![gmail]](mailto:zgy25483387@gmail.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -145,6 +145,4 @@ Gaoyuan Zhang
 [result]: asset/initial-results-withsignin.png
 [Backend]: asset/Backend.png
 [github]: https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white
-[github-url]: https://github.com/gocodezhang
 [gmail]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
-[gmail-url]: mailto:zgy25483387@gmail.com
