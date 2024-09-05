@@ -72,7 +72,7 @@ https://github.com/user-attachments/assets/0f8b53c0-238e-43b5-91dc-6543a557f9f3
 To enable conversational restaurant recommendation, the backend has embedded the logic to integrate OpenAI API with Yelp API. Please note below and the screenshots for the logic details:
 1. Post receiving users' input, the backend will send the requests to OpenAI API (ChatGPT)
     * **Prompting Technique**
-        * Always start with a predefined question that asks for restaurant names and request to return results as a list to ensure consistency in ChatGPT's response
+        * Always start with a predefined question that asks for restaurant names and requests to return results as a list to ensure consistency in ChatGPT's response
         * Then append user's input in following context so that user's requests are also taking into account
         * Specify number of restaurant in prompting to limit cost and reduce response time
 2. Once receiving ChatGPT's response, the backend will process the text response into vaild parameters
