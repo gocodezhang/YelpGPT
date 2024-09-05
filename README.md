@@ -48,13 +48,9 @@
 3. After sent, a list of restaurant recommendations will be generated
    * Registered users will have the options to save restauants in bookmark
    * Users can modify their locations or request regeneration to update recommendations
+   * **Users can continue chatting by entering additional key words or sentences and a new list of restaurant recommendation will be generated based on entire dialogue context**
 
-*See below screenshots as references*
-<p>
-  <img src="asset/Location-input.png">
-  <img src="asset/Initial-keywords.png">
-  <img src="asset/initial-results-withsignin.png">
-</p>
+*See below video demo as references*
 
 
 ### Built With
